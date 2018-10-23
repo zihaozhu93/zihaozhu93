@@ -8,14 +8,14 @@
   <title>summaryCV | BASE</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="description项目经验回顾总结，主要是2016-18年间做过的一些实际项目   研究  相似度研究 [] 图像检测 [] 文本结构化抽取 [] 公告事件研究   [] 工程 [] 爬虫 [] 图谱构建 [] web api开发">
-<meta name="keywords" content="summary,cv,deep learning,machine learning">
+<meta name="keywords" content="summary,deep learning,machine learning">
 <meta property="og:type" content="article">
 <meta property="og:title" content="summaryCV">
 <meta property="og:url" content="http://zihow.info/2018/10/22/summaryCV/index.html">
 <meta property="og:site_name" content="BASE">
 <meta property="og:description" content="description项目经验回顾总结，主要是2016-18年间做过的一些实际项目   研究  相似度研究 [] 图像检测 [] 文本结构化抽取 [] 公告事件研究   [] 工程 [] 爬虫 [] 图谱构建 [] web api开发">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-10-23T06:12:33.678Z">
+<meta property="og:updated_time" content="2018-10-23T06:49:18.359Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="summaryCV">
 <meta name="twitter:description" content="description项目经验回顾总结，主要是2016-18年间做过的一些实际项目   研究  相似度研究 [] 图像检测 [] 文本结构化抽取 [] 公告事件研究   [] 工程 [] 爬虫 [] 图谱构建 [] web api开发">
@@ -104,18 +104,33 @@
 </li>
 </ul>
 <a id="more"></a>
-<h1 id="patient-similarity"><a href="#patient-similarity" class="headerlink" title="patient similarity"></a>patient similarity</h1><p><em>WHAT(做什么)</em>：通过疾病、症状、药品等电子病例信息来判断病人两两间病史相似度<br><em>HOW(怎么做)</em>：1. 使用word2vec向量化EHR事件 2.相似度计算网络模型，利用卷积神经网络学习一组病人间的特征，构造相似度矩阵计算其相似度值。<br><em>WHY(为什么)</em>：通过向量化表示，转化为数学问题</p>
-<h2 id="相似度"><a href="#相似度" class="headerlink" title="相似度"></a>相似度</h2><pre><code>- 欧式距离
-- 余弦距离
-- 杰卡德（Jaccard）系数
-</code></pre>
+<h1 id="Patient-Similarity"><a href="#Patient-Similarity" class="headerlink" title="Patient Similarity"></a>Patient Similarity</h1><p><strong>WHAT</strong><br>通过疾病、症状、药品等电子病例信息来判断病人两两间病史相似度</p>
+<p><strong>HOW</strong></p>
+<ol>
+<li>使用word2vec向量化EHR事件</li>
+<li>相似度计算网络模型，利用卷积神经网络学习一组病人间的特征，构造相似度矩阵计算其相似度值。</li>
+</ol>
+<p><strong>WHY</strong></p>
+<ol>
+<li>通过word2vec向量化表示，有几个好处：<ul>
+<li>降低数据维度。原始one-hot表示高维(EHR事件多达7000余种)且稀疏(单个病人病史仅包含少数事件), 经过word2vec训练后，可降维至指定数据维度。</li>
+<li>EHR事件之间具有前后相关性。类似语义嵌入，相同或类似的EHR事件其向量余弦值等于或接近于1。</li>
+</ul>
+</li>
+<li>卷积神经网络沿病史时间轴做卷积操作，提取病史特征，有效利用了病史间的局部相关性。</li>
+</ol>
+<p><strong>RESULT</strong><br>给定一对病人电子病例数据，判断其是否罹患同一疾病，准确率达97%。</p>
+<h2 id="Details"><a href="#Details" class="headerlink" title="Details"></a>Details</h2><ol>
+<li>word2vec表示EHR向量</li>
+</ol>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://zihow.info/2018/10/22/summaryCV/" data-id="cjnlc2zce0000zl5plh1vs86d" class="article-share-link">Share</a>
+      <a data-url="http://zihow.info/2018/10/22/summaryCV/" data-id="cjnlddhn90000l55ps16nz9z9" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/cv/">cv</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/deep-learning/">deep learning</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/machine-learning/">machine learning</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/summary/">summary</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/deep-learning/">deep learning</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/machine-learning/">machine learning</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/summary/">summary</a></li></ul>
 
     </footer>
   </div>
@@ -145,7 +160,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/cv/">cv</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/deep-learning/">deep learning</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/machine-learning/">machine learning</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/summary/">summary</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/deep-learning/">deep learning</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/machine-learning/">machine learning</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/summary/">summary</a></li></ul>
     </div>
   </div>
 
@@ -155,7 +170,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/cv/" style="font-size: 10px;">cv</a> <a href="/tags/deep-learning/" style="font-size: 10px;">deep learning</a> <a href="/tags/machine-learning/" style="font-size: 10px;">machine learning</a> <a href="/tags/summary/" style="font-size: 10px;">summary</a>
+      <a href="/tags/deep-learning/" style="font-size: 10px;">deep learning</a> <a href="/tags/machine-learning/" style="font-size: 10px;">machine learning</a> <a href="/tags/summary/" style="font-size: 10px;">summary</a>
     </div>
   </div>
 

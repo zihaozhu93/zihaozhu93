@@ -16,7 +16,7 @@
 <meta property="og:description" content="description项目经验回顾总结，主要是2016-18年间做过的一些实际项目   研究  相似度研究 [] 图像检测 [] 文本结构化抽取 [] 公告事件研究   [] 工程 [] 爬虫 [] 图谱构建 [] web api开发">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/bed13e09ly1fwjcrza7auj218k0o0436.jpg">
-<meta property="og:updated_time" content="2018-10-24T07:42:38.906Z">
+<meta property="og:updated_time" content="2018-10-24T07:44:19.474Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="summaryCV">
 <meta name="twitter:description" content="description项目经验回顾总结，主要是2016-18年间做过的一些实际项目   研究  相似度研究 [] 图像检测 [] 文本结构化抽取 [] 公告事件研究   [] 工程 [] 爬虫 [] 图谱构建 [] web api开发">
@@ -127,7 +127,7 @@
 <ul>
 <li>每个病人EHR事件按时间排序，构成一个输入样本，该样本包含若干个ERH事件。输入样本总数达40,000个</li>
 <li><p>使用<code>gensim</code>来训练EHR向量，主要设置参数为<code>min_count</code>, <code>size</code>, <code>window</code>,对应为事件最少出现频率、词向量输出维度、上下文覆盖距离(以词为单位)</p>
-  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">model = gensim.models.Word2Vec(</span><br><span class="line">        sentences,</span><br><span class="line">        min_count=5,</span><br><span class="line">        size=50,</span><br><span class="line">        workers=4)</span><br><span class="line">model.wv.save_word2vec_format(&apos;../data/model_50.vector&apos;, binary=False)</span><br></pre></td></tr></table></figure>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">model = gensim.models.Word2Vec(</span><br><span class="line">        sentences,</span><br><span class="line">        min_count=5,</span><br><span class="line">        window=10,</span><br><span class="line">        size=50,</span><br><span class="line">        workers=4)</span><br><span class="line">model.wv.save_word2vec_format(&apos;../data/model_50.vector&apos;, binary=False)</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>设置<code>min_count=10, size=50, window=10</code>，在后续学习中能取得最优表现</p>
 </li>
@@ -145,7 +145,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://zihow.info/2018/10/22/summaryCV/" data-id="cjnmuq19y0000v75pu47ptdxl" class="article-share-link">Share</a>
+      <a data-url="http://zihow.info/2018/10/22/summaryCV/" data-id="cjnmus43y0000i85pt4bbwkwd" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/deep-learning/">deep learning</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/machine-learning/">machine learning</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/summary/">summary</a></li></ul>

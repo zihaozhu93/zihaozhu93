@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head><meta name="generator" content="Hexo 3.8.0">
-  <meta charset="utf-8">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
   
 
   
@@ -16,7 +16,7 @@
 <meta property="og:description" content="description项目经验回顾总结，主要是2016-18年间做过的一些实际项目   研究  相似度研究 [] 图像检测 [] 文本结构化抽取 [] 公告事件研究   [] 工程 [] 爬虫 [] 图谱构建 [] web api开发">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/bed13e09ly1fwjcrza7auj218k0o0436.jpg">
-<meta property="og:updated_time" content="2018-10-24T07:44:19.474Z">
+<meta property="og:updated_time" content="2018-10-25T06:42:59.048Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="summaryCV">
 <meta name="twitter:description" content="description项目经验回顾总结，主要是2016-18年间做过的一些实际项目   研究  相似度研究 [] 图像检测 [] 文本结构化抽取 [] 公告事件研究   [] 工程 [] 爬虫 [] 图谱构建 [] web api开发">
@@ -30,11 +30,11 @@
   
     <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
   
-  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/style.css"><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </head>
 </html>
 <body>
-  <div id="container">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="container">
     <div id="wrap">
       <header id="header">
   <div id="banner"></div>
@@ -136,6 +136,11 @@
 <li><p>神经网络学习病人特征</p>
 <ul>
 <li><p>网络架构如下所示</p>
+<ul>
+<li>使用两个卷积网络，分别在两个样本输入矩阵上做卷积操作，得到卷积特征;</li>
+<li>对卷积特征做池化操作，得到池化特征;</li>
+<li>由两个样本池化特征，构造中间参数变量相似度矩阵$M$，用以计算相似度$$sim(x_a,x_b) = x_{a}^TMx_b$$</li>
+</ul>
 <p><img src="https://ws1.sinaimg.cn/large/bed13e09ly1fwjcrza7auj218k0o0436.jpg" alt="framework_cnn"></p>
 </li>
 </ul>
@@ -145,7 +150,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://zihow.info/2018/10/22/summaryCV/" data-id="cjnmus43y0000i85pt4bbwkwd" class="article-share-link">Share</a>
+      <a data-url="http://zihow.info/2018/10/22/summaryCV/" data-id="cjno8mfuc0000185p8g6nd3jk" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/deep-learning/">deep learning</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/machine-learning/">machine learning</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/summary/">summary</a></li></ul>
@@ -255,6 +260,23 @@
 
 
 
-  </div>
+  </div><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
 </body>
 </html>

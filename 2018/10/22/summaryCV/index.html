@@ -16,7 +16,7 @@
 <meta property="og:description" content="description项目经验回顾总结，主要是2016-18年间做过的一些实际项目   研究  相似度研究 [  ] 图像检测 [  ] 文本结构化抽取 [  ] 公告事件研究   [  ] 工程 [  ] 爬虫 [  ] 图谱构建 [  ] web api开发">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://ws1.sinaimg.cn/large/bed13e09ly1fwjcrza7auj218k0o0436.jpg">
-<meta property="og:updated_time" content="2018-10-25T07:52:48.624Z">
+<meta property="og:updated_time" content="2018-10-25T08:12:10.212Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="summaryCV">
 <meta name="twitter:description" content="description项目经验回顾总结，主要是2016-18年间做过的一些实际项目   研究  相似度研究 [  ] 图像检测 [  ] 文本结构化抽取 [  ] 公告事件研究   [  ] 工程 [  ] 爬虫 [  ] 图谱构建 [  ] web api开发">
@@ -140,6 +140,8 @@
 <li>使用两个卷积网络，分别在两个样本输入矩阵上做卷积操作，得到卷积特征;</li>
 <li>对卷积特征做池化操作，得到池化特征;</li>
 <li>由两个样本池化特征，构造中间参数变量相似度矩阵$M$，用以计算相似度: $sim(x_a,x_b) = x_{a}^TMx_b$</li>
+<li>将池化特征及相似度拼接成一个新的特征，构造全连接层</li>
+<li>以全连接层输出与样本对标签，选择均方误差(MSE)作为损失函数</li>
 </ul>
 <p><img src="https://ws1.sinaimg.cn/large/bed13e09ly1fwjcrza7auj218k0o0436.jpg" alt="framework_cnn"></p>
 </li>
@@ -150,7 +152,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://zihow.info/2018/10/22/summaryCV/" data-id="cjnoaj42h0000ok5p9bnagtuc" class="article-share-link">Share</a>
+      <a data-url="http://zihow.info/2018/10/22/summaryCV/" data-id="cjnob86a10000zz5pxe4bd6x7" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/deep-learning/">deep learning</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/machine-learning/">machine learning</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/summary/">summary</a></li></ul>
